@@ -1,0 +1,10 @@
+# Samuel Hanneson
+# I can solve a rubiks cube in less than 20 seconds
+
+print(" SSS   H   H")
+print("S   S  H   H")
+print("S      H   H")
+print(" SSS   HHHHH")
+print("    S  H   H")
+print("S   S  H   H")
+print(" SSS   H   H")
