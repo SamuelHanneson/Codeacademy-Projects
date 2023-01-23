@@ -1,0 +1,57 @@
+class School:
+  def __init__(self, name, level, numberOfStudents):
+    self.name = name
+    self.level = level
+    self.numberOfStudents = numberOfStudents
+
+  def __repr__(self):
+    return "{} is a {} school with {} students.".format(self.name, self.level, self.numberOfStudents)
+
+  #Getters
+  def getname(self):
+    return self.name()
+
+  def getlevel(self):
+    return self.level()
+  
+  def getstudents(self):
+    return self.numberOfStudents()
+  #Setters
+  def setstudents(self, students):
+    if type(students) is int:
+      self.numberOfStudents = students
+
+#Primary School
+class PrimarySchool(School):
+  def __init__(self, name, numberOfStudents, pickupPolicy):
+    super().__init__(name, "primary", numberOfStudents)
+    self._pickupPolicy = pickupPolicy
+
+  def __repr__(self):
+    parentRepr = super().__repr__()
+    return parentRepr + " The pickup policy is {}".format(self._pickupPolicy)
+
+  def getpickupPolicy(self):
+    return self._pickupPolicy()
+
+class HighSchool(School):
+  def __init__(self, name, numberOfStudents, sportsTeams: list):
+    super().__init__(name, "high", numberOfStudents)
+    self._sportsTeams = sportsTeams
+
+  def __repr__(self):
+    parentRepr = super().__repr__()
+    return parentRepr + " We have the following sports teams available {}".format(self._sportsTeams)
+
+  def getsports(self):
+    for sport in self._sportsTeams:
+      return sport
+
+
+
+M = School("School2", "middle", 110)
+P = PrimarySchool("School3", 85, "4PM")
+H = HighSchool("School1", 240, ["Tennis", "Basketball", "Volleyball", "Swimming"])
+print(M)
+print(P)
+print(H)
